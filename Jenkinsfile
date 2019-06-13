@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("atrillanes72/jenkinslavepoc")
+        app = docker.build("atrillanes72/jenkinslavepoc3")
     }
 
     stage('Test image') {
