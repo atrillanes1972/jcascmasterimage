@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("atrillanes72/jenkinslavepoc4a")
+        app = docker.build("benhall/dind-jenkins-agent")
     }
 
     stage('Test image') {
