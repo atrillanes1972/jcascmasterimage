@@ -3,8 +3,8 @@ node {
     
     agent {
         docker { 
-                image 'benhall/dind-jenkins-agent' 
-                args '-v /var/run/docker.sock'
+                image 'dind-jenkins-agent' 
+                args '-v /var/run/docker.sock:/var/run/docker.sock'
                }
     }
     
