@@ -1,4 +1,4 @@
-node {
+pipeline {
     def app
     
     agent {
@@ -7,7 +7,8 @@ node {
                 args '-v /var/run/docker.sock:/var/run/docker.sock'
                }
     }
-    
+    stages
+    {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -45,4 +46,5 @@ node {
             app.push("latest")
         }
     }
+  }
 }
