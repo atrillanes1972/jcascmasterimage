@@ -1,11 +1,7 @@
-pipeline {
+node {
     
-    agent {
-        docker { 
-                image 'dind-jenkins-agent' 
-                args '-v /var/run/docker.sock:/var/run/docker.sock'
-               }
-    }
+    agent any
+    
     stages
     {
     stage('Clone repository') {
