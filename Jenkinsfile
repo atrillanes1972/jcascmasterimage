@@ -2,7 +2,10 @@ node {
     def app
     
     agent {
-        docker { image 'benhall/dind-jenkins-agent' }
+        docker { 
+                image 'benhall/dind-jenkins-agent' 
+                args '-v /var/run/docker.sock'
+               }
     }
     
     stage('Clone repository') {
