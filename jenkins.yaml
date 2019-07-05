@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Master-Jenkins for CDEV team (Ron,August,Ed,Jeremiah,Erick,Gelo): configured automatically with JCasC plugin\n\n"
+  systemMessage: "Master-Jenkins for CDEV team (poc testing): configured automatically with JCasC plugin\n\n"
 tool:
   git:
     installations:
