@@ -15,17 +15,11 @@ tool:
                 id: "3.5.4"
 jobs:
   - script: >
-      pipelineJob('pipeline') {
-          definition {
-              cpsScm {
-                  scriptPath 'Jenkinsfile'
-                  scm {
-                    git {
-                            remote { url 'https://github.com/atrillanes1972/jcascmasterimage.git' }
-                        branch '*/master'
-                        extensions {}
-                    }
-                  }
+      multibranchPipelineJob('configuration-as-code') {
+          branchSources {
+              git {
+                  id = 'configuration-as-code'
+                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
               }
           }
       }
