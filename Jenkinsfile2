@@ -1,4 +1,4 @@
-job('parameterized-hello-world') {
+pipelineJob('parameterized-hello-world') {
 
    parameters {
 
