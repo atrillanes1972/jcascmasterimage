@@ -33,11 +33,11 @@ jobs:
           }
       }
   - script: >
- job("Seed_Job") {
- parameters {
-    stringParam("job_dsl_repo", "", "Job DSL Repo")
-    stringParam("job_dsl_branch", "", "Job DSL Branch")
-    stringParam("job_dsl_path", "", "Location of Job DSL Groovy Script")
+      job("Seed_Job") {
+         parameters {
+          stringParam("job_dsl_repo", "", "Job DSL Repo")
+          stringParam("job_dsl_branch", "", "Job DSL Branch")
+          stringParam("job_dsl_path", "", "Location of Job DSL Groovy Script")
   }
 
   scm {
