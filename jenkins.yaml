@@ -23,6 +23,7 @@ jobs:
               }
           }
       }
+   - script: >
       multibranchPipelineJob('configuration-as-code-sample2') {
           branchSources {
               git {
