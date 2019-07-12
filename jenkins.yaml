@@ -23,4 +23,11 @@ jobs:
               }
           }
       }
-   
+      multibranchPipelineJob('configuration-as-code-sample2') {
+          branchSources {
+              git {
+                  id = 'configuration-as-code'
+                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
+              }
+          }
+      }
