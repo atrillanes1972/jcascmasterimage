@@ -34,16 +34,14 @@ jobs:
       }
   - script: >
       job("Seed_simple_job") {
-        node('master') {
-          stage('Checkout') {
+        stage('Checkout') {
             cleanWs()
             checkout scm
           }
 
-          stage('Seed') {
+        stage('Seed') {
             jobDsl(targets: 'jobs-for-seed/*.groovy', sandbox: false)
           }
-        }
       }
   - script: >
       job("Seed_Job_test_POC") {
