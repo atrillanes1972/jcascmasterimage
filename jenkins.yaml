@@ -39,9 +39,9 @@ jobs:
   
         parameters {
     
-          stringParam("job_dsl_repo", "", "https://github.com/atrillanes1972/jcascmasterimage.git")
-          stringParam("job_dsl_branch", "", "jobdsls")
-          stringParam("job_dsl_path", "", "jobs-for-seed")
+          stringParam("job_dsl_repo", "https://github.com/atrillanes1972/jcascmasterimage.git", "JOB DSL repo URI")
+          stringParam("job_dsl_branch", "master", "Branch to process")
+          stringParam("job_dsl_path", "jobs-for-seed/*.groovy", "Directory to process, and a glob for all groovy types")
         }
 
   
