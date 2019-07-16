@@ -40,9 +40,9 @@ jobs:
             checkout scm
           }
 
-     stage('Seed') {
-        jobDsl(targets: 'jobs-for-seed/*.groovy', sandbox: false)
-        }
+          stage('Seed') {
+            jobDsl(targets: 'jobs-for-seed/*.groovy', sandbox: false)
+          }
         }
      }
   - script: >
