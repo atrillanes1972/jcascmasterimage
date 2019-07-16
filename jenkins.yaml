@@ -44,7 +44,7 @@ jobs:
             jobDsl(targets: 'jobs-for-seed/*.groovy', sandbox: false)
           }
         }
-     }
+      }
   - script: >
       job("Seed_Job_test_POC") {
 
