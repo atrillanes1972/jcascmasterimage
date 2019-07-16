@@ -41,7 +41,7 @@ jobs:
           }
 
      stage('Seed') {
-        jobDsl(targets: 'job-as-seed/*.groovy', sandbox: false)
+        jobDsl(targets: 'jobs-for-seed/*.groovy', sandbox: false)
         }
         }
      }
