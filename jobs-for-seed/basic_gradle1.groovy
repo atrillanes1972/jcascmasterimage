@@ -1,7 +1,7 @@
 job('test-gradle-ci') {
     description 'Build and test the app.'
     scm {
-        github 'sheehan/job-dsl-playground'
+        github 'atrillanes1972/job-dsl-playground'
     }
     steps {
         gradle 'test'
