@@ -41,7 +41,7 @@ jobs:
           stringParam("job_dsl_repo", "", "Job DSL Repo")
           stringParam("job_dsl_branch", "", "Job DSL Branch")
           stringParam("job_dsl_path", "", "Location of Job DSL Groovy Script")
-      }
+        }
 
   
       scm {
@@ -52,9 +52,9 @@ jobs:
           remote {
             name("origin")
             url("\$job_dsl_repo")
+          }
+        }
       }
-    }
-  }
 
   
       steps {
@@ -63,6 +63,6 @@ jobs:
         dsl {
       
           external("\$job_dsl_path")
-    }
-  }
+        }
+      }
 }
