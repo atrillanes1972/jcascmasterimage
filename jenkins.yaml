@@ -63,7 +63,7 @@ jobs:
     
         dsl {
       
-          external("\$job_dsl_path")
+          script(external("\$job_dsl_path"))
         }
       }
       }
