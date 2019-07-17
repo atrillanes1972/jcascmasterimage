@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'masterjendocker' 
+            image 'docker:1.11' 
             args '-v /var/run/docker.sock:/var/run/docker.sock' 
         }
     }
