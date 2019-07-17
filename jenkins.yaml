@@ -19,7 +19,7 @@ jobs:
           branchSources {
               git {
                   id = 'configuration-as-code'
-                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
+                  remote('https://github.com/atrillanes1972/jcascmasterimage.git')
               }
           }
       }
@@ -27,7 +27,7 @@ jobs:
       multibranchPipelineJob('configuration-as-code-sample2') {
           branchSources {
               git {
-                  id = 'configuration-as-code'
+                  id = 'configuration-as-code-sample2'
                   remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
               }
           }
