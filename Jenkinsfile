@@ -1,10 +1,10 @@
 pipeline {
     agent {
         kubernetes {
-            label 'docker'
+            label 'maven'
             containerTemplate {
-                name 'docker'
-                image 'docker:1.11'
+                name 'maven'
+                image 'nulldriver:maven-resource'
                 ttyEnabled true
                 command 'cat'
             }
