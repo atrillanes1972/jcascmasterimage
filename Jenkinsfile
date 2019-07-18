@@ -1,10 +1,10 @@
 pipeline {
     agent {
         kubernetes {
-            label 'jenkins-demo'
+            label 'docker'
             containerTemplate {
-                name 'dind-jdk8-maven3'
-                image 'eu.gcr.io/jenkins-demo/dind-jdk8-maven3:v4'
+                name 'docker'
+                image 'docker:1.11'
                 ttyEnabled true
                 command 'cat'
             }
