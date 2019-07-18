@@ -4,7 +4,7 @@ pipeline {
             label 'maven'
             containerTemplate {
                 name 'maven'
-                image 'mavenlabs/maven-ci'
+                image 'maven:3-alpine'
                 ttyEnabled true
                 command 'cat'
             }
