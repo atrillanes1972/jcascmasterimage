@@ -4,7 +4,7 @@ pipeline {
             label 'maven'
             containerTemplate {
                 name 'maven'
-                image 'nulldriver:maven-resource'
+                image 'nulldriver/maven-resource'
                 ttyEnabled true
                 command 'cat'
             }
