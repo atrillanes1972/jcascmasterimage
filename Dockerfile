@@ -9,6 +9,6 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get install docker -y
-RUN usermod -aG docker jenkins
+RUN usermod -g docker jenkins
 VOLUME /var/run/docker.sock
 ENTRYPOINT groupmod -g $(stat -c “%g” /var/run/docker.sock) docker && usermod -u $(stat -c “%u” /var/jenkins_home) jenkins && gosu jenkins /bin/tini – /usr/local/bin/jenkins.sh
