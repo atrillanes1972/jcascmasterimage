@@ -23,19 +23,9 @@ jobs:
               }
           }
       }
-  - script: >
-      multibranchPipelineJob('configuration-as-code-sample2') {
-          branchSources {
-              git {
-                  id = 'configuration-as-code-sample2'
-                  remote('https://github.com/jenkinsci/configuration-as-code-plugin.git')
-              }
-          }
-      }
-  
+    
   - script: >
       job("Seed_Job_test_POC") {
-
   
         parameters {
     
@@ -43,7 +33,6 @@ jobs:
           stringParam("job_dsl_branch", "master", "Branch to process")
           stringParam("job_dsl_path", "jobs-for-seed/*.groovy", "Directory to process, and a glob for all groovy types")
         }
-
   
       scm {
     
@@ -57,9 +46,7 @@ jobs:
         }
       }
 
-  
       steps {
-
     
         dsl {
       
