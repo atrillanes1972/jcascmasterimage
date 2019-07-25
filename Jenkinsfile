@@ -1,34 +1,26 @@
 podTemplate(label: 'mypod', containers: [
-    containerTemplate(name: 'docker', image: 'mgmuhilan/dind-maven3-jdk8', ttyEnabled: true, command: 'cat'),
-]) {
-  node('mypod') {
-        container('docker') {
-          docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-          }
+    containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'golang', image: 'golang:1.6.3', ttyEnabled: true, command: 'cat')
+  ]) {
+
+    node ('mypod') {
+        stage 'Get a Maven project'
+        git 'https://github.com/jenkinsci/kubernetes-plugin.git'
+        container('maven') {
+            stage 'Build a Maven project'
+            sh 'mvn clean install'
         }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
+
+        stage 'Get a Golang project'
+        git url: 'https://github.com/hashicorp/terraform.git'
+        container('golang') {
+            stage 'Build a Go project'
+            sh """
+            mkdir -p /go/src/github.com/hashicorp
+            ln -s `pwd` /go/src/github.com/hashicorp/terraform
+            cd /go/src/github.com/hashicorp/terraform && make core-dev
+            """
         }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
+
     }
-  }
 }
