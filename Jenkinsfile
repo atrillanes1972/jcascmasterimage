@@ -1,7 +1,7 @@
 podTemplate(label: 'mypod', containers: [
     containerTemplate(name: 'docker', image: 'mgmuhilan/dind-maven3-jdk8', ttyEnabled: true, command: 'cat'),
 ]) {
-  pipeline {
+  node('mypod') {
     agent {
         container('docker') {
           docker {
