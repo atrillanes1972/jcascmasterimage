@@ -2,14 +2,12 @@ podTemplate(label: 'mypod', containers: [
     containerTemplate(name: 'docker', image: 'mgmuhilan/dind-maven3-jdk8', ttyEnabled: true, command: 'cat'),
 ]) {
   node('mypod') {
-    agent {
         container('docker') {
           docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
           }
         }
-    }
     stages {
         stage('Build') {
             steps {
